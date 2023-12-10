@@ -97,7 +97,7 @@ Moreover, we also consider __classical NPMLE esimator__ (NPMLE), __smoothed NPML
        lty=c(3,1,1,2), bty='n', seg.len=2.0, y.intersp=0.8, x.intersp=0.8)
   ```
 
-![Alt text](Image/gaussian-uniform.png)
+![Alt text](Image/simulation.png)
 
 
 
