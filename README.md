@@ -2,7 +2,9 @@
 R pakcage for Generative Bootstrap NPMLE, _GB-NPMLE_ in short.
 
 ## Abstract 
-Nonparametric maxium likelihood estimator (NPMLE) is popular for estiamting latent distribution in mixture model despite the fact that NPMLE is almost-surely discrete which is less attractive when truth is continous density. Bootstrapping is one of the nature way to introduce smoothness such as Weighted likelihood Bootstrap. GB-NPMLE is a generative framework for fast approximating true NPMLE bootstrap distribution with siginificant computational reduction while remain as smooth as true bootstrap esimator.
+Nonparametric maxium likelihood estimator (NPMLE) is popular for estiamting latent distribution in mixture model despite the fact that NPMLE is almost-surely discrete which is less attractive when truth is continous density. 
+
+Bootstrapping is one of the nature way to introduce smoothness such as Weighted likelihood Bootstrap. GB-NPMLE is a generative framework for fast approximating true NPMLE bootstrap distribution with siginificant computational reduction while remain as smooth as true bootstrap esimator.
 
 ## Installation
 To run the Net-NPMLE smoothly, there are several pre-requisites needed to be installed before the R package. The main of GB-NPMLE is worte in `Python`, especially __Pytorch__ library and we strongly recommend using `CUDA` (GPU-Based tool) to train Net-NPMLE which can be accelerated a lot than using `CPU`.
