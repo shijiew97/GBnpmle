@@ -7,7 +7,7 @@ Nonparametric maxium likelihood estimator (NPMLE) is popular for estiamting late
 Bootstrapping is one of the nature way to introduce smoothness such as Weighted likelihood Bootstrap. GB-NPMLE is a generative framework for fast approximating true NPMLE bootstrap distribution with siginificant computational reduction while remain as smooth as true bootstrap esimator.
 
 ## Installation
-To run the Net-NPMLE smoothly, there are several pre-requisites needed to be installed before the R package. The main of GB-NPMLE is worte in `Python`, especially __Pytorch__ library and we strongly recommend using `CUDA` (GPU-Based tool) to train Net-NPMLE which can be accelerated a lot than using `CPU`.
+To run the GB-NPMLE smoothly, there are several pre-requisites needed to be installed before the R package. The main of GB-NPMLE is worte in `Python`, especially __Pytorch__ library and we strongly recommend using `CUDA` (GPU-Based tool) to train GB-NPMLE which can be accelerated a lot than using `CPU`.
 - __Python__ 3.7 or above
 - __[Pytroch](https://pytorch.org/)__ 1.11.0 or above
 - __[NAVID CUDA](https://developer.nvidia.com/cuda-toolkit)__ 10.2 or above
@@ -27,7 +27,7 @@ library(GBnpmle)
 ```
 
 ## Main functions
-There are three main functions in the `Net-GBnpmle` package, which are detailed specified below.
+There are three main functions in the `GBnpmle` package, which are detailed specified below.
 - `GB_NPMLE` aims to train the bootstrap generator via a novel two-stage algorithm. Currently GB-NPMLE supports mixutre cases such as Gaussian-location, Poisson-mixture, Lognormal-location, Gamma-rate and Binomial-prob.
 - `GB_NPMLE_Sample` generates bootstrap samples using the trained generator from `GB_NPMLE`.
 - `GB_NPMLE_Load` loads a pre-trained bootstrap generator for further training or generation procedure using object from `GB_NPMLE`.
