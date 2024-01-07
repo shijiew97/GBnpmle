@@ -1,25 +1,25 @@
 # GBnpmle
-R pakcage for Generative Bootstrap NPMLE, _GB-NPMLE_ in short.
+R pakcage for Generative Bootstrapping for Nonparametric Maximum Likelihood Estimation, _GB-NPMLE_ in short.
 
 ## Abstract 
-Nonparametric maxium likelihood estimator (NPMLE) is popular for estiamting latent distribution in mixture model despite the fact that NPMLE is almost-surely discrete which is less attractive when truth is continous density. 
+Nonparametric maxium likelihood estimation (NPMLE) is a popular mtehodology for estimating a latent density in mixture models. However, the classical NPMLE is almost surely discrete, making it less attractive for modeling continuous latent densities.
 
-Bootstrapping is one of the nature way to introduce smoothness such as Weighted likelihood Bootstrap. GB-NPMLE is a generative framework for fast approximating true NPMLE bootstrap distribution with siginificant computational reduction while remain as smooth as true bootstrap esimator.
+Bootstrapping, e.g. the weighted likelihood bootstrap, is a natural way to simulate from the latent distribution and introduce smoothness into the NPMLE. GB-NPMLE is a generative framework for fast bootstrapping. In terms of density estimation, GB-NPMLE is almost indistinguishable from traditional bootstrapping based on repeated evaluations on resampled data. However, GB-NPMLE only requires a single evaluation of a two-stage algorithm, making it computationally much more efficient. 
 
 ## Installation
-To run the GB-NPMLE smoothly, there are several pre-requisites needed to be installed before the R package. The main of GB-NPMLE is worte in `Python`, especially __Pytorch__ library and we strongly recommend using `CUDA` (GPU-Based tool) to train GB-NPMLE which can be accelerated a lot than using `CPU`.
+To fit GB-NPMLE, there are several software tools that need to be installed before using this R package. The main of GB-NPMLE function is written in `Python` using the __Pytorch__ library. We also strongly recommend using `CUDA` (GPU-Based tool) to train GB-NPMLE which can be much faster than using `CPU`.
 - __Python__ 3.7 or above
 - __[Pytroch](https://pytorch.org/)__ 1.11.0 or above
 - __[NAVID CUDA](https://developer.nvidia.com/cuda-toolkit)__ 10.2 or above
 
 
-In R, we also need `reticulate` package to run `Python` in R and `devtools` to install R package from github.
+In R, we also need to install the `reticulate` package to run `Python` in R and `devtools` to install R package from GitHub.
 ```
 install.package("reticulate")
 install.package("devtools")
 ```
 
-Now, use the following code to install `GBnpmle` package.
+Now, use the following code to install the `GBnpmle` package.
 ```
 library(devtools)
 install_github(repo = "shijiew97/GBnpmle")
@@ -27,15 +27,15 @@ library(GBnpmle)
 ```
 
 ## Main functions
-There are three main functions in the `GBnpmle` package, which are detailed specified below.
-- `GB_NPMLE` aims to train the bootstrap generator via a novel two-stage algorithm. Currently GB-NPMLE supports mixutre cases such as Gaussian-location, Poisson-mixture, Lognormal-location, Gamma-rate and Binomial-prob.
+There are three main functions in the `GBnpmle` package:
+- `GB_NPMLE` trains the bootstrap generator via a novel two-stage algorithm. Currently GB-NPMLE supports the following mixture models: Gaussian-location, Poisson-rate, Lognormal-location, Gamma-rate and Binomial-probability.
 - `GB_NPMLE_Sample` generates bootstrap samples using the trained generator from `GB_NPMLE`.
-- `GB_NPMLE_Load` loads a pre-trained bootstrap generator for further training or generation procedure using object from `GB_NPMLE`.
+- `GB_NPMLE_Load` loads a pre-trained bootstrap generator for further training or generation procedure using an object from `GB_NPMLE`.
 
 ## Illustration
-For illustration of GB-NPMLE, we consider three mixture model cases of sample size $n=1,000$ descripted as below. 
+For illustration of GB-NPMLE, we consider three mixture models described below. A sample size of $n=1,000$ is used for all examples. 
 
-Moreover, we also consider __classical NPMLE esimator__ (NPMLE), __smoothed NPMLE__ (sNPMLE) which is implemented by R package `REBayes` and classical __boostrapped NPMLE__, as comparison to __GB-NPMLE__.
+We also consider __classical NPMLE esimator__ (NPMLE), __smoothed NPMLE__ (sNPMLE), and the classical __boostrapped NPMLE__ as comparisons to __GB-NPMLE__. NPMLE, sNPMLE, and bootstrapped NPMLE are implemented using the R package `REBayes`.
   ```{r, eval=FALSE}
   gb_col <- rgb(1, 0, 0)
   bnp_col <- rgb(0, 0, 1)
