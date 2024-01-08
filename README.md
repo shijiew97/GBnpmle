@@ -2,12 +2,12 @@
 R package for Generative Bootstrapping for Nonparametric Maximum Likelihood Estimation, _GB-NPMLE_ in short.
 
 ## Abstract 
-Nonparametric maxium likelihood estimation (NPMLE) is a popular mtehodology for estimating a latent density in mixture models. However, the classical NPMLE is almost surely discrete, making it less attractive for modeling continuous latent densities.
+Nonparametric maxium likelihood estimation (NPMLE) is a popular methodology for estimating a latent density in mixture models. However, the classical NPMLE is almost surely discrete, making it less attractive for modeling continuous latent densities.
 
 Bootstrapping, e.g. the weighted likelihood bootstrap, is a natural way to simulate from the latent distribution and introduce smoothness into the NPMLE. GB-NPMLE is a generative framework for rapidly obtaining a bootstrapped NPMLE distribution. In terms of density estimation, GB-NPMLE is almost indistinguishable from traditional bootstrapping based on repeated evaluations on resampled data. However, GB-NPMLE only requires a single evaluation of a two-stage algorithm, making it computationally much more efficient. 
 
 ## Installation
-To fit GB-NPMLE, there are several software tools that need to be installed before using this R package. The main of GB-NPMLE function is written in `Python` using the __Pytorch__ library. We also strongly recommend using `CUDA` (GPU-Based tool) to train GB-NPMLE which can be much faster than using `CPU`.
+To fit GB-NPMLE, there are several software tools that need to be installed before using this R package. The main GB-NPMLE function is written in `Python` using the __Pytorch__ library. We also strongly recommend using `CUDA` (GPU-Based tool) to train GB-NPMLE which can be much faster than using `CPU`.
 - __Python__ 3.7 or above
 - __[Pytroch](https://pytorch.org/)__ 1.11.0 or above
 - __[NAVID CUDA](https://developer.nvidia.com/cuda-toolkit)__ 10.2 or above
